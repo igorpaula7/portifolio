@@ -18,7 +18,8 @@ Desenvolvimento de portifolio usando o framework Django para exibição de meus 
 
 ## Principais Funcionalidades
 
-(em desenvolvimento)
+- CRUD de projetos;
+- Manutenção do portifolio via django admin
 
 ## Requisitos
 
@@ -26,7 +27,25 @@ Desenvolvimento de portifolio usando o framework Django para exibição de meus 
 
 ## Modelagem de dados
 
-(em desenvolvimento)
+```mermaid
+classDiagram
+
+    class Projeto {
+        +str titulo
+        +str descricao
+        +str link_repositorio
+        +int linguagem_id
+    }
+
+    class Linguagem {
+      +str titulo
+      +str cor_hexadecimal
+    }
+
+  Projeto <|-- Linguagem
+
+  note for Linguagem "um projeto pode ter várias linguagens"
+```
 
 ## Links Úteis
 
