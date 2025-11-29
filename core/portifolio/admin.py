@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Projeto, Tecnologia
+from portifolio.models import Projeto, Tecnologia
 
 # Register your models here.
 

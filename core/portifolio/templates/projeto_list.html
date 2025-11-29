@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Projetos</title>
+</head>
+<body>
+    <h1>Meus Projetos</h1>
+
+    {% if projetos %}
+        <ul>
+            {% for projeto in projetos %}
+                <li>
+                    <h2>{{ projeto.titulo }}</h2>
+                    <p>{{ projeto.descricao }}</p>
+
+                    {% if projeto.imagem_capa %}
+                        <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" width="200">
+                    {% endif %}
+
+                    <p>
+                        <a href="{{ projeto.link_repositorio }}" target="_blank">
+                            Ver repositório
+                        </a>
+                    </p>
+
+                    <p>
+                        Tecnologias:
+                        {% for tech in projeto.tecnologias.all %}
+                            <span style="background-color: {{ tech.cor_fundo }}; color: {{ tech.cor_texto }};">
+                                {{ tech.nome }}
+                            </span>
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Ainda não há projetos cadastrados.</p>
+    {% endif %}
+</body>
+</html>
