@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Meus Projetos</title>
+    <title>Igor de Paula</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
+
 <body>
-    <h1>Meus Projetos</h1>
 
-    {% if projetos %}
-        <ul>
-            {% for projeto in projetos %}
-                <li>
-                    <h2>{{ projeto.titulo }}</h2>
-                    <p>{{ projeto.descricao }}</p>
+    <main id="principal">
+        <div>
+            <h1 class="titulo-principal">Igor de Paula</h1>
+            <h3 class="cargo-titulo">Full-stack Developer</h3>
+        </div>
 
-                    {% if projeto.imagem_capa %}
-                        <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" width="200">
-                    {% endif %}
+        <p class="texto-principal">Desenvolvedor full stack com foco em <span class="destaque">Python e JavaScript</span>. Formado em Engenharia de Software pela Universidade de Franca.</p>
+        <a href="#" class="botao-principal">VER PROJETOS</a>
+    </main>
 
-                    <p>
-                        <a href="{{ projeto.link_repositorio }}" target="_blank">
-                            Ver repositório
-                        </a>
-                    </p>
+    <section id="projetos">
+        <h1 class="titulo-principal">Meus Projetos</h1>
 
-                    <p>
-                        Tecnologias:
-                        {% for tech in projeto.tecnologias.all %}
-                            <span style="background-color: {{ tech.cor_fundo }}; color: {{ tech.cor_texto }};">
-                                {{ tech.nome }}
-                            </span>
-                        {% endfor %}
-                    </p>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Ainda não há projetos cadastrados.</p>
-    {% endif %}
+        {% for projeto in projetos %}
+
+        <div class="projeto">
+            <img src="" alt="">
+            <div class="tecnologias-projeto">
+                {% for tech in projeto.tecnologias.all %}
+                <span style="background-color: {{ tech.cor_fundo }}; 
+                    color: {{ tech.cor_texto }};">
+                    {{ tech.nome }}
+                </span>
+                {% endfor %}
+            </div>
+            <h3 class="titulo-projeto">a</h3>
+            <p class="descricao-projeto">a</p>
+            <a href="" class="botao-projeto">DETALHES</a>
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+    <section id="contato">
+        <h1 class="titulo-principal">Contato</h1>
+        <p class="texto-contato">Olá! Sou Igor, desenvolvedor full-stack brasileiro apaixonado por resolver problemas através de código limpo e eficiente. Quando não estou programando, você me encontra lendo, treinando ou escrevendo análises no meu blog.</p>
+        <p class="texto-contato">Estou sempre aberto a novos desafios e oportunidades de colaboração. Vamos conversar?</p>
+        <div class="redes-sociais">
+            <ion-icon name="logo-github"></ion-icon>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-icon name="logo-linkedin"></ion-icon>
+            <ion-icon name="bookmark-outline"></ion-icon>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Desenvolvido por Igor de Paula © 2025</h4>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>

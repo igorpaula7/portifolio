@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --fundo: #0d1117;
+  --secundaria: #161b22;
+  --texto: #c9d1d9;
+  --destaque: #58a6ff;
+}
+
+body {
+  background-color: var(--fundo);
+  margin: 30px;
+}
+/* Estilização da parte principal do site */
+
+#principal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 50px;
+}
+
+.titulo-principal {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--destaque);
+}
+
+.cargo-titulo {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--destaque);
+}
+
+.texto-principal {
+  color: var(--texto);
+}
+
+.destaque {
+  color: var(--destaque);
+  font-weight: 900;
+}
+
+.botao-principal {
+  background-color: var(--destaque);
+  color: var(--texto);
+  padding: 10px 30px;
+  font-size: 24px;
+  font-weight: 900;
+  border-radius: 50px;
+}
+
+.botao-principal:hover {
+  background-color: var(--texto);
+  color: var(--destaque);
+}
