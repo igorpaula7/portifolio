@@ -26,25 +26,31 @@
     <section id="projetos">
       <h1 class="titulo-principal">Meus Projetos</h1>
 
-      {% for projeto in projetos %}
+      <div class="lista-projetos">
+        {% for projeto in projetos %}
 
-      <div class="projeto">
-        <img src="" alt="" />
-        <div class="tecnologias-projeto">
-          {% for tech in projeto.tecnologias.all %}
-          <span
-            style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};"
-          >
-            {{ tech.nome }}
-          </span>
-          {% endfor %}
+        <div class="projeto">
+          <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" />
+          <div class="detalhes-projeto">
+            <div class="tecnologias-projeto">
+              {% for tech in projeto.tecnologias.all %}
+              <span
+                class="tecnologia"
+                style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};"
+              >
+                {{ tech.nome }}
+              </span>
+              {% endfor %}
+            </div>
+
+            <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
+            <p class="descricao-projeto">{{ projeto.descricao }}</p>
+            <a href="" class="botao-projeto">DETALHES</a>
+          </div>
         </div>
-        <h3 class="titulo-projeto">a</h3>
-        <p class="descricao-projeto">a</p>
-        <a href="" class="botao-projeto">DETALHES</a>
-      </div>
 
-      {% endfor %}
+        {% endfor %}
+      </div>
     </section>
 
     <section id="contato">
@@ -55,15 +61,17 @@
         programando, você me encontra lendo, treinando ou escrevendo análises no
         meu blog.
       </p>
+    </br>
       <p class="texto-contato">
         Estou sempre aberto a novos desafios e oportunidades de colaboração.
         Vamos conversar?
       </p>
+    </br>
       <div class="redes-sociais">
-        <ion-icon name="logo-github"></ion-icon>
-        <ion-icon name="mail-outline"></ion-icon>
-        <ion-icon name="logo-linkedin"></ion-icon>
-        <ion-icon name="bookmark-outline"></ion-icon>
+        <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+        <a href="#" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
+        <a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#" target="_blank"><ion-icon name="bookmark-outline"></ion-icon></a>
       </div>
     </section>
 
