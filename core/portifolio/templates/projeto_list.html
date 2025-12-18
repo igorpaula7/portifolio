@@ -2,90 +2,84 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Igor de Paula</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  </head>
 
-  <body>
-    <main id="principal">
-      <div>
-        <h1 class="titulo-principal">Igor de Paula</h1>
-        <h3 class="cargo-titulo">Full-stack Developer</h3>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Igor de Paula</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
 
-      <p class="texto-principal">
-        Desenvolvedor full stack com foco em
-        <span class="destaque">Python e JavaScript</span>. Formado em Engenharia
-        de Software pela Universidade de Franca.
-      </p>
-      <a href="#" class="botao-principal">VER PROJETOS</a>
-    </main>
+<body>
+  <main id="principal">
+    <div>
+      <h1 class="titulo-principal">Igor de Paula</h1>
+      <h3 class="cargo-titulo">Full-stack Developer</h3>
+    </div>
 
-    <section id="projetos">
-      <h1 class="titulo-principal">Meus Projetos</h1>
+    <p class="texto">
+      Desenvolvedor full stack com foco em
+      <span class="destaque">Python e JavaScript</span>. Formado em Engenharia
+      de Software pela Universidade de Franca.
+    </p>
+    <a href="#" class="botao-principal">VER PROJETOS</a>
+  </main>
 
-      <div class="lista-projetos">
-        {% for projeto in projetos %}
+  <section id="projetos">
+    <h1 class="titulo-principal">Meus Projetos</h1>
 
-        <div class="projeto">
-          <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" />
-          <div class="detalhes-projeto">
-            <div class="tecnologias-projeto">
-              {% for tech in projeto.tecnologias.all %}
-              <span
-                class="tecnologia"
-                style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};"
-              >
-                {{ tech.nome }}
-              </span>
-              {% endfor %}
-            </div>
+    <div class="lista-projetos">
+      {% for projeto in projetos %}
 
-            <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
-            <p class="descricao-projeto">{{ projeto.descricao }}</p>
-            <a href="" class="botao-projeto">DETALHES</a>
+      <div class="projeto">
+        <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" />
+        <div class="detalhes-projeto">
+          <div class="tecnologias-projeto">
+            {% for tech in projeto.tecnologias.all %}
+            <span class="tecnologia" style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};">
+              {{ tech.nome }}
+            </span>
+            {% endfor %}
           </div>
+
+          <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
+          <p class="descricao-projeto">{{ projeto.descricao }}</p>
+          <a href="" class="botao-projeto">DETALHES</a>
         </div>
-
-        {% endfor %}
       </div>
-    </section>
 
-    <section id="contato">
-      <h1 class="titulo-principal">Contato</h1>
-      <p class="texto-contato">
-        Olá! Sou Igor, desenvolvedor full-stack brasileiro apaixonado por
-        resolver problemas através de código limpo e eficiente. Quando não estou
-        programando, você me encontra lendo, treinando ou escrevendo análises no
-        meu blog.
-      </p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="contato">
+    <h1 class="titulo-principal">Contato</h1>
+    <p class="texto">
+      Olá! Sou Igor, desenvolvedor full-stack brasileiro apaixonado por
+      resolver problemas através de código limpo e eficiente. Quando não estou
+      programando, você me encontra lendo, treinando ou escrevendo análises no
+      meu blog.
+    </p>
     </br>
-      <p class="texto-contato">
-        Estou sempre aberto a novos desafios e oportunidades de colaboração.
-        Vamos conversar?
-      </p>
+    <p class="texto">
+      Estou sempre aberto a novos desafios e oportunidades de colaboração.
+      Vamos conversar?
+    </p>
     </br>
-      <div class="redes-sociais">
-        <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-        <a href="#" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
-        <a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-        <a href="#" target="_blank"><ion-icon name="bookmark-outline"></ion-icon></a>
-      </div>
-    </section>
+    <div class="redes-sociais">
+      <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+      <a href="#" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
+      <a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="#" target="_blank"><ion-icon name="bookmark-outline"></ion-icon></a>
+    </div>
+  </section>
 
-    <footer>
-      <h4>Desenvolvido por Igor de Paula © 2025</h4>
-    </footer>
+  <footer>
+    <h4>Desenvolvido por Igor de Paula © 2025</h4>
+  </footer>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
