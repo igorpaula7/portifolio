@@ -18,6 +18,10 @@ class Projeto(models.Model):
     blank=True,
     null=True
   )
+  fixado = models.BooleanField(default=False)
 
   def __str__(self):
     return self.titulo
+  
+  class Meta:
+    ordering = ['-fixado', '-id']
