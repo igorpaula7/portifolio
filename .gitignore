@@ -234,3 +234,4 @@ cython_debug/
 
 core/core/__pycache__/
 core/portifolio/migrations/*
+core/staticfiles/*
