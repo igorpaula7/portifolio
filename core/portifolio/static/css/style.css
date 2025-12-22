@@ -174,13 +174,14 @@ body {
 
   .projeto {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
   }
 
   .projeto > img {
     width: 100%;
     height: auto;
+    max-height: 150px;
     border-radius: 15px 15px 0 0;
   }
 
