@@ -18,7 +18,15 @@
 
 body {
   background-color: var(--fundo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+#container {
+  flex: 1;
+}
+
 /* Estilização da parte principal do site */
 
 #principal {
@@ -161,6 +169,14 @@ footer > h4 {
   color: var(--fundo);
 }
 
+.botao_voltar,
+.botao_ver_todos {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   #principal {
     margin: 15px 0px 15px 15px;
@@ -224,5 +240,9 @@ footer > h4 {
 
   footer > h4 {
     font-size: 14px;
+  }
+
+  .botao_voltar {
+    font-size: 18px;
   }
 }

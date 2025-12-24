@@ -15,8 +15,7 @@
     {% block extra_css %} {% endblock extra_css %}
   </head>
   <body>
-    <main>{% block content %}{% endblock %}</main>
-
+    <main id="container">{% block content %}{% endblock %}</main>
     {% include "includes/footer.html" %}
   </body>
 </html>
