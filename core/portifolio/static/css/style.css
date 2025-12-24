@@ -201,6 +201,16 @@ body {
   .redes-sociais > a > ion-icon {
     font-size: 40px;
   }
+
+  .titulo-projeto,
+  .descricao-projeto,
+  .tecnologia {
+    font-size: 14px;
+  }
+
+  .botao-projeto {
+    font-size: 18px;
+  }
 }
 
 footer {
