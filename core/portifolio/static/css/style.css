@@ -151,6 +151,16 @@ body {
   font-size: 50px;
 }
 
+footer {
+  background-color: var(--destaque);
+  text-align: center;
+  padding: 10px 0px;
+}
+
+footer > h4 {
+  color: var(--fundo);
+}
+
 @media (max-width: 768px) {
   #principal {
     margin: 15px 0px 15px 15px;
@@ -211,14 +221,8 @@ body {
   .botao-projeto {
     font-size: 18px;
   }
-}
 
-footer {
-  background-color: var(--destaque);
-  text-align: center;
-  padding: 10px 0px;
-}
-
-footer > h4 {
-  color: var(--fundo);
+  footer > h4 {
+    font-size: 14px;
+  }
 }
