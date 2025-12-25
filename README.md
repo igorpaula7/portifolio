@@ -1,6 +1,7 @@
 # Portifolio
 
 ![Django](https://img.shields.io/badge/Django-%23092E20.svg?logo=django&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)
 ![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)
 
@@ -153,3 +154,9 @@ classDiagram
 **Deploy do Projeto no PythonAnywhere**: [Clique Aqui](https://igorpaula7.pythonanywhere.com)  
 **Documentação do Django**: [Clique Aqui](https://docs.djangoproject.com/pt-br/6.0)  
 **Página do Projeto no Notion**: [Clique Aqui](https://igorpaula7.notion.site/Portif-lio-Django-2cea1c1c46f98009916bc876c540e7a9?source=copy_link)
+
+## Contato
+
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:igoroliveira7896@gmail.com)
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/igorpaula7/)
+[![Substack](https://img.shields.io/badge/Substack-FF6719?logo=substack&logoColor=fff)](https://substack.com/@igoroliveiradepaula?)
