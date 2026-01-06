@@ -1,18 +1,19 @@
-from django.shortcuts import render
 from django.views.generic import ListView
-from portifolio.models import Projeto, Tecnologia
+from portifolio.models import Projeto
 
 
-class ListaDeProjetos(ListView):
-  model = Projeto
-  template_name = 'projeto_list.html'
-  context_object_name = 'projetos'
+class ListaProjetos(ListView):
+    model = Projeto
+    context_object_name = 'projetos'
+    mostrar_todos = False
 
-  def get_queryset(self):
-    return Projeto.objects.filter(fixado=True)[:3]
-  
+    def get_template_names(self):
+        if self.mostrar_todos:
+            return ['projeto_list_all.html']
+        return ['projeto_list.html']
 
-class ListaDeTodosProjetos(ListView):
-  model = Projeto
-  template_name = 'projeto_list_all.html'
-  context_object_name = 'projetos'
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if self.mostrar_todos:
+            return qs
+        return qs.filter(fixado=True)[:3]
