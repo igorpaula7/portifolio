@@ -149,6 +149,29 @@ classDiagram
   note for Tecnologia "um projeto pode ter várias tecnologias"
 ```
 
+## Deploy no PythonAnywhere
+
+O projeto foi deployado no [PythonAnywhere](https://www.pythonanywhere.com/).
+
+### Resumo do processo
+
+- Clone do repositório via console Bash (`git clone ...`)
+- Criação de virtualenv com Python 3.13 (`mkvirtualenv ...`)
+- Instalação das dependências (`pip install -r requirements.txt`)
+- Criação de web app manual (Manual configuration)
+- Configuração do arquivo WSGI apontando para `core.settings`
+- Configuração de variáveis de ambiente via `.env`:
+  - `ENVIRONMENT=prod`
+  - `SECRET_KEY=...`
+  - `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`
+- Ajuste do `ALLOWED_HOSTS` para `seu-usuario.pythonanywhere.com`
+- Migrações (`python manage.py migrate`)
+- Coleta de estáticos (`python manage.py collectstatic`)
+- Criação de superuser (`python manage.py createsuperuser`)
+
+Para o passo a passo detalhado, veja:  
+`docs/deploy-pythonanywhere.md` ou a página do Notion listada abaixo.
+
 ## Links Úteis
 
 **Deploy do Projeto no PythonAnywhere**: [Clique Aqui](https://igorpaula7.pythonanywhere.com)  
