@@ -1,52 +1,38 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 <section id="projetos">
-  <a href="{% url 'lista_projetos' %}" class="botao_voltar">
-    <ion-icon name="return-up-back-outline"></ion-icon>
-    Voltar para Igor de Paula
-  </a>
-  <h1 class="titulo-principal">Meus Projetos</h1>
+    <a href="{% url 'lista_projetos' %}" class="botao_voltar">
+        <ion-icon name="return-up-back-outline"></ion-icon>
+        Voltar para Igor de Paula
+    </a>
+    <h1 class="titulo-principal">Meus Projetos</h1>
 
-  <div class="lista-projetos">
-    {% for projeto in projetos %}
+    <div class="lista-projetos">
+        {% for projeto in projetos %}
 
-    <div class="projeto">
-      <div class="detalhes-projeto">
-        <div class="tecnologias-projeto">
-          {% for tech in projeto.tecnologias.all %}
-          <span
-            class="tecnologia"
-            style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};"
-          >
-            {{ tech.nome }}
-          </span>
-          {% endfor %}
+        <div class="projeto">
+            <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
+            <p class="descricao-projeto">
+                {{ projeto.descricao|truncatechars:120 }}
+            </p>
+            <div class="tecnologias-projeto">
+                {% for tech in projeto.tecnologias.all %}
+                <span class="tecnologia"> #{{ tech.nome }} </span>
+                {% endfor %}
+            </div>
         </div>
 
-        <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
-        <p class="descricao-projeto">
-          {{ projeto.descricao|truncatechars:120 }}
-        </p>
-        <a
-          href="{{ projeto.link_repositorio }}"
-          target="_blank"
-          class="botao-projeto"
-          >VER NO GITHUB</a
-        >
-      </div>
+        {% endfor %}
     </div>
-
-    {% endfor %}
-  </div>
 </section>
 
 <script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
 ></script>
 <script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
 ></script>
 
 {% endblock %}

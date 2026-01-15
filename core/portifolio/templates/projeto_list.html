@@ -1,73 +1,58 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %} {% block content %}
+<section id="principal">
+  <h1 class="titulo-principal">Igor de Paula</h1>
+  <h3 class="cargo-titulo">Full-stack Developer</h3>
+  <p class="texto">
+    Desenvolvedor full stack com foco em
+    <span class="destaque">Python e JavaScript</span>. Formado em Engenharia de
+    Software pela Universidade de Franca.
+  </p>
+  <div class="redes-sociais">
+    <a href="https://github.com/igorpaula7" target="_blank" class="icon-social"
+      ><ion-icon name="logo-github"></ion-icon
+    ></a>
+    <a href="mailto:igoroliveira7896@gmail.com" target="_blank"
+      ><ion-icon name="mail-outline"></ion-icon
+    ></a>
+    <a href="https://www.linkedin.com/in/igorpaula7/" target="_blank"
+      ><ion-icon name="logo-linkedin"></ion-icon
+    ></a>
+    <a href="https://substack.com/@igoroliveiradepaula?" target="_blank"
+      ><ion-icon name="bookmark-outline"></ion-icon
+    ></a>
+  </div>
+</section>
 
-{% load static %}
+<section id="projetos">
+  <h1 class="titulo-principal">Meus Projetos</h1>
 
-{% block content %}
-  <section id="principal">
-    <div>
-      <h1 class="titulo-principal">Igor de Paula</h1>
-      <h3 class="cargo-titulo">Full-stack Developer</h3>
-    </div>
+  <div class="lista-projetos">
+    {% for projeto in projetos %}
 
-    <p class="texto">
-      Desenvolvedor full stack com foco em
-      <span class="destaque">Python e JavaScript</span>. Formado em Engenharia
-      de Software pela Universidade de Franca.
-    </p>
-    <a href="https://drive.google.com/file/d/1dFTQW5p32MQbnsIilVTZ8CUa-0foJwQG/view?usp=sharing" target="_blank" class="botao-principal">VER CURRICULUM</a>
-  </section>
-
-  <section id="projetos">
-    <h1 class="titulo-principal">Meus Projetos</h1>
-
-    <div class="lista-projetos">
-      {% for projeto in projetos %}
-
-      <div class="projeto">
-        <img src="{{ projeto.imagem_capa.url }}" alt="{{ projeto.titulo }}" />
-        <div class="detalhes-projeto">
-          <div class="tecnologias-projeto">
-            {% for tech in projeto.tecnologias.all %}
-            <span class="tecnologia" style="background-color: {{ tech.cor_fundo }};color: {{ tech.cor_texto }};">
-              {{ tech.nome }}
-            </span>
-            {% endfor %}
-          </div>
-
-          <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
-          <p class="descricao-projeto">{{ projeto.descricao|truncatechars:120 }}</p>
-          <a href="{{ projeto.link_repositorio }}" target="_blank" class="botao-projeto">DETALHES</a>
-        </div>
+    <div class="projeto">
+      <h3 class="titulo-projeto">{{ projeto.titulo }}</h3>
+      <p class="descricao-projeto">{{ projeto.descricao|truncatechars:120 }}</p>
+      <div class="tecnologias-projeto">
+        {% for tech in projeto.tecnologias.all %}
+        <span class="tecnologia"> #{{ tech.nome }} </span>
+        {% endfor %}
       </div>
-
-      {% endfor %}
     </div>
 
-    <a href="{% url 'lista_todos_projetos' %}" class="botao_ver_todos">Ver todos os projetos</a>
-  </section>
+    {% endfor %}
+  </div>
 
-  <section id="contato">
-    <h1 class="titulo-principal">Contato</h1>
-    <p class="texto">
-      Olá! Sou Igor, desenvolvedor full-stack brasileiro apaixonado por
-      resolver problemas através de código limpo e eficiente. Quando não estou
-      programando, você me encontra lendo, treinando ou escrevendo análises no
-      meu blog.
-    </p>
-    </br>
-    <p class="texto">
-      Estou sempre aberto a novos desafios e oportunidades de colaboração.
-      Vamos conversar?
-    </p>
-    </br>
-    <div class="redes-sociais">
-      <a href="https://github.com/igorpaula7" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-      <a href="mailto:igoroliveira7896@gmail.com" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
-      <a href="https://www.linkedin.com/in/igorpaula7/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-      <a href="https://substack.com/@igoroliveiradepaula?" target="_blank"><ion-icon name="bookmark-outline"></ion-icon></a>
-    </div>
-  </section>
+  <a href="{% url 'lista_todos_projetos' %}" class="botao_ver_todos"
+    >Ver mais...</a
+  >
+</section>
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
 {% endblock %}
