@@ -100,6 +100,14 @@ main {
 .titulo-projeto {
     color: var(--destaque);
     font-size: var(--psize);
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo-projeto > ion-icon {
+    color: var(--destaque);
 }
 
 .descricao-projeto {
